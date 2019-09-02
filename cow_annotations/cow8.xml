@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cow_images</folder>
+	<filename>cow8.jpg</filename>
+	<path>/home/nvidia/Desktop/SillySoftware/cow_images/cow8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>480</width>
+		<height>360</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rs_cow</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>39</xmin>
+			<ymin>179</ymin>
+			<xmax>97</xmax>
+			<ymax>235</ymax>
+		</bndbox>
+	</object>
+</annotation>

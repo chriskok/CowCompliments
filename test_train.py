@@ -8,11 +8,14 @@ import cv2
 options = {"model": "darkflow/cfg/yolo_custom.cfg", 
            "load": "darkflow/bin/yolov2.weights",
            "batch": 8,
-           "epoch": 100,
+           "epoch": 150,
            "train": True,
            "annotation": "./cow_annotations/",
-           "labels": "./darkflow/labels.txt",
-           "dataset": "./cow_images_small/"}
+           "lr": 0.001,
+           "gpu": 1.0,
+        #    "labels": "./darkflow/labels.txt",
+           "labels": "./classes.txt",
+           "dataset": "./cow_images/"}
 
 
 tfnet = TFNet(options)

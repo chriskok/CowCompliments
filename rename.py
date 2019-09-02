@@ -3,11 +3,11 @@ import os
   
 # Function to rename multiple files 
 def main(): 
-    i = 0
     
-    pathname = "./cow_annotations/"
+    pathname = "./cow_images/"
     for filename in os.listdir(pathname): 
-        dst = str(i) + '.' + filename.split(".")[-1]
+        splitname = filename.split(".")
+        dst = 'cow' + splitname[0] + '.' + splitname[-1]
         src = pathname + filename 
         dst = pathname + dst 
           
@@ -15,7 +15,6 @@ def main():
         # rename all the files 
         os.rename(src, dst) 
         print(dst)
-        i += 1
   
 # Driver Code 
 if __name__ == '__main__': 
