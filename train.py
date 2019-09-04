@@ -8,7 +8,7 @@ import cv2
 options = {"model": "darkflow/cfg/yolo_custom.cfg", 
            "load": "darkflow/bin/yolov2.weights",
            "batch": 8,
-           "epoch": 10000,
+           "epoch": 30000,
            "train": True,
          #   "annotation": "./cow_annotations/",
            "annotation": "./cow_anno_2/",
@@ -25,4 +25,4 @@ tfnet.train()
 
 # this line of code lets you save the built graph to a protobuf file (.pb)
 # this step is unnecessary for this notebook
-tfnet.savepb()
+# tfnet.savepb()
