@@ -5,7 +5,7 @@ from darkflow.net.build import TFNet
 import cv2
 
 
-options = {"model": "cfg/yolov2.cfg", "load": "bin/yolov2.weights", "threshold": 0.1, "labels": "cfg/coco.names"}
+options = {"model": "cfg/new_tiny.cfg", "load": "bin/yolov2-tiny.weights", "threshold": 0.1, "labels": "cfg/coco.names"}
 
 tfnet = TFNet(options)
 

@@ -8,7 +8,8 @@ Creating silly software for fun
 ```
 labelimg ..\Videos\Data data\predefined_classes.txt
 ```
-4. Train the darkflow model with new annotations (python test_train.py)
+4. Download training weights and create custom cfg file
+5. Train the darkflow model with new annotations (python test_train.py)
 
 ## TODO
 - create program to run and get output in runescape 

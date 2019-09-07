@@ -5,5 +5,5 @@
 	path = google-images-download
 	url = https://github.com/hardikvasa/google-images-download.git
 [submodule "darkflow"] 
-  path = darkflow 
-  url = https://github.com/thtrieu/darkflow.git
+	path = darkflow 
+	url = https://github.com/thtrieu/darkflow.git

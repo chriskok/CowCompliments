@@ -10,11 +10,10 @@ options = {"model": "darkflow/cfg/yolo_custom.cfg",
            "batch": 8,
            "epoch": 30000,
            "train": True,
-         #   "annotation": "./cow_annotations/",
            "annotation": "./cow_anno_2/",
            "lr": 0.00001,
            "gpu": 1.0,
-        #    "labels": "./darkflow/labels.txt",
+        #    "labels": "./darkflow/cfg/coco.names",
            "labels": "./classes.txt",
            "dataset": "./cow_images_2/"}
 
