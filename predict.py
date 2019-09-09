@@ -19,7 +19,7 @@ import os
 pathname = './Videos/Data'
 
 for filename in os.listdir(pathname): 
-    if (filename.split(".")[-1] != "jpg"):
+    if (filename.split(".")[-1] != "png" and filename.split(".")[-1] != "jpg"):
         continue
     
     original_img = cv2.imread(pathname + '/' + filename)
