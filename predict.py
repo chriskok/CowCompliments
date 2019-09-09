@@ -4,7 +4,7 @@ import numpy as np
 from darkflow.net.build import TFNet
 import cv2
 
-options = {"model": "cfg/yolo_custom.cfg",
+options = {"model": "cfg/cow_custom_full.cfg",
            "load": -1,
            "labels": "./classes.txt",
            "threshold": 0.1}
@@ -16,14 +16,13 @@ tfnet2.load_from_ckpt()
 import pprint as pp
 import os
 
-pathname = './cow_images_2'
+pathname = './Videos/Data'
 
 for filename in os.listdir(pathname): 
     if (filename.split(".")[-1] != "jpg"):
         continue
     
     original_img = cv2.imread(pathname + '/' + filename)
-    # original_img = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
     results = tfnet2.return_predict(original_img)
     print(results)
 

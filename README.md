@@ -8,7 +8,7 @@ Creating silly software for fun
 ```
 labelimg ..\Videos\Data data\predefined_classes.txt
 ```
-4. Download training weights and create custom cfg file
+4. Download training weights (put in /bin), create /ckpt and create custom cfg file (in /cfg)
 5. Train the darkflow model with new annotations (python test_train.py)
 
 ## TODO

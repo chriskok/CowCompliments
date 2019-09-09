@@ -3,20 +3,18 @@ import numpy as np
 
 from darkflow.net.build import TFNet
 import cv2
-# options = {"model": "darkflow/cfg/yolov2.cfg", "load": "darkflow/bin/yolov2.weights", "threshold": 0.6, "labels": "darkflow/cfg/coco.names"}
 
-options = {"model": "darkflow/cfg/yolo_custom.cfg", 
-           "load": "darkflow/bin/yolov2.weights",
+options = {"model": "cfg/cow_custom_full.cfg", 
+         #   "load": -1,
+           "load": "bin/yolov2.weights",
            "batch": 8,
-           "epoch": 30000,
+           "epoch": 1000,
            "train": True,
-           "annotation": "./cow_anno_2/",
+           "annotation": "./Videos/cow_annotations/",
            "lr": 0.00001,
            "gpu": 1.0,
-        #    "labels": "./darkflow/cfg/coco.names",
            "labels": "./classes.txt",
-           "dataset": "./cow_images_2/"}
-
+           "dataset": "./Videos/Data/"}
 
 tfnet = TFNet(options)
 
