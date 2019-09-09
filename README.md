@@ -2,6 +2,18 @@
 Creating silly software for fun
 
 
+## Installation
+- git clone with submodules:
+```
+git clone --recurse-submodules https://github.com/chriskok/SillySoftware.git
+```
+- git add submodules after just cloning:
+```
+git clone https://github.com/chriskok/SillySoftware.git
+git submodule update --init --recursive
+```
+
+
 ## Process
 1. Use Free Cam (https://www.freescreenrecording.com/) to capture a video of me walking amongst cows
 2. Use VLC to split the photos into pictures of each frame
@@ -21,17 +33,8 @@ python darkflow\flow --model cfg/cow_custom_full.cfg --load -1 --demo Videos\Cow
 - create program to run and get output in runescape 
 
 
-## Installation
-- git clone with submodules:
-```
-git clone --recurse-submodules -j8 https://github.com/chriskok/SillySoftware.git
-```
-- git add submodules after just cloning:
-```
-git clone https://github.com/chriskok/SillySoftware.git
-git submodule update --init --recursive
-```
-
-
 ## Notes
 - get images to label, inside google_images_download/google_images_download (python google_images_download.py --keywords "osrs cows" --limit 40 --format jpg)
+- To save a video with predicted bounding box, add --saveVideo option.
+- Use different version of ckpt saved models for different accuracy or to avoid overfitting
+- CKPT 750 was loss of around 9, CKPT 1500 was around 2, CKPT 500 could have been like 25
