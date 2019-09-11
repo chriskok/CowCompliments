@@ -41,7 +41,7 @@ def on_click(x, y, button, pressed):
     if (button == Button.right and pressed == True):
         # im=ImageGrab.grab(bbox=(x-60, y + 25, x + 30, y + 40))
         # im.save('cow_compliment_imgs/walkhere.png')
-        time.sleep(0.5)
+        time.sleep(0.35)
         im2=ImageGrab.grab(bbox=(x-100, y , x + 50, y + 100))
         im2.save('cow_compliment_imgs/options.png')
         # time.sleep(2)
