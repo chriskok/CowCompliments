@@ -11,16 +11,17 @@ from ctypes import windll
 user32 = windll.user32
 user32.SetProcessDPIAware()
 
-# X_START = 960
-# Y_START = 40
-# X_STOP = 1910
-# Y_STOP = 930
+# Full Screen
+X_START = 960
+Y_START = 40
+X_STOP = 1910
+Y_STOP = 930
 
 # Smaller version
-X_START = 1160
-Y_START = 240
-X_STOP = 1710
-Y_STOP = 730
+# X_START = 1260
+# Y_START = 340
+# X_STOP = 1610
+# Y_STOP = 630
 
 CURRENT_TIME = time.time()
 
@@ -30,6 +31,9 @@ def time_diff(prefix):
     CURRENT_TIME = time.time()
 
 def click_coordinates(predictions):
+    if predictions is None:
+        print("no cow found")
+        return
     result = random.choice(predictions)
     if (not result or result['confidence'] < 0.3):
         print("no cow found")
@@ -47,13 +51,14 @@ def click_coordinates(predictions):
 
     # makes program execution pause for 10 sec 
     # pyautogui.moveTo(x_coord, y_coord, duration = 0.1)  
-    pyautogui.click(x=x_coord, y=y_coord, button='right')
+    pyautogui.click(x=x_coord, y=y_coord, button='left')
+    # pyautogui.click(x=x_coord, y=y_coord, button='right')
 
-    time.sleep(0.35)
-    im2=ImageGrab.grab(bbox=(x_coord-100, y_coord, x_coord + 50, y_coord + 100))
-    im2.save('cow_compliment_imgs/options.png')
-    MPx,MPy = click_walk_here()
-    pyautogui.click(x=x_coord, y=(y_coord + MPy + 10))
+    # time.sleep(0.35)
+    # im2=ImageGrab.grab(bbox=(x_coord-100, y_coord, x_coord + 50, y_coord + 100))
+    # im2.save('cow_compliment_imgs/options.png')
+    # MPx,MPy = click_walk_here()
+    # pyautogui.click(x=x_coord, y=(y_coord + MPy + 10))
 
 def click_walk_here():
     method = cv2.TM_SQDIFF_NORMED
@@ -77,8 +82,8 @@ if __name__ == "__main__":
     options = {"model": "cfg/cow_custom_full.cfg",
            "load": 1000,
            "labels": "./classes.txt",
-           "threshold": 0.5,
-           "GPU": 0.8}
+           "threshold": 0.1,
+           "GPU": 1.0}
 
     tfnet2 = TFNet(options)
 
@@ -87,7 +92,8 @@ if __name__ == "__main__":
     import pprint as pp
     import os
 
-    for i in range(10):
+    # for i in range(10):
+    while True:
         # Save part of the screen where osrs is
         im=ImageGrab.grab(bbox=(X_START,Y_START,X_STOP,Y_STOP)).convert('RGB')
         im.save('cow_compliment_imgs/current.png')
@@ -100,7 +106,7 @@ if __name__ == "__main__":
         time_diff('end pred')
 
         click_coordinates(results)
-        time.sleep(0.5)
+        time.sleep(10)
 
 
         def boxing(original_img , predictions):
