@@ -38,3 +38,4 @@ python darkflow\flow --model cfg/cow_custom_full.cfg --load -1 --demo Videos\Cow
 - To save a video with predicted bounding box, add --saveVideo option.
 - Use different version of ckpt saved models for different accuracy or to avoid overfitting
 - CKPT 750 was loss of around 9, CKPT 1500 was around 2, CKPT 500 could have been like 25
+- Very far from realtime on my Windows Intel i5 Processor, which makes sense (about 3.1 seconds to predict without anything else open)

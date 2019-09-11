@@ -51,14 +51,14 @@ def click_coordinates(predictions):
 
     # makes program execution pause for 10 sec 
     # pyautogui.moveTo(x_coord, y_coord, duration = 0.1)  
-    pyautogui.click(x=x_coord, y=y_coord, button='left')
-    # pyautogui.click(x=x_coord, y=y_coord, button='right')
+    # pyautogui.click(x=x_coord, y=y_coord, button='left')
+    pyautogui.click(x=x_coord, y=y_coord, button='right')
 
-    # time.sleep(0.35)
-    # im2=ImageGrab.grab(bbox=(x_coord-100, y_coord, x_coord + 50, y_coord + 100))
-    # im2.save('cow_compliment_imgs/options.png')
-    # MPx,MPy = click_walk_here()
-    # pyautogui.click(x=x_coord, y=(y_coord + MPy + 10))
+    time.sleep(0.35)
+    im2=ImageGrab.grab(bbox=(x_coord-100, y_coord, x_coord + 50, y_coord + 100))
+    im2.save('cow_compliment_imgs/options.png')
+    MPx,MPy = click_walk_here()
+    pyautogui.click(x=x_coord, y=(y_coord + MPy + 10))
 
 def click_walk_here():
     method = cv2.TM_SQDIFF_NORMED
@@ -106,7 +106,7 @@ if __name__ == "__main__":
         time_diff('end pred')
 
         click_coordinates(results)
-        time.sleep(10)
+        time.sleep(5)
 
 
         def boxing(original_img , predictions):
