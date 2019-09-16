@@ -30,8 +30,7 @@ python darkflow\flow --model cfg/cow_custom_full.cfg --load -1 --demo Videos\Cow
 
 
 ## TODO
-- create program to run and get output in runescape 
-
+- Look into preprocessing images and maybe hyperparameter tuning for yolo? 
 
 ## Notes
 - get images to label, inside google_images_download/google_images_download (python google_images_download.py --keywords "osrs cows" --limit 40 --format jpg)
@@ -39,3 +38,4 @@ python darkflow\flow --model cfg/cow_custom_full.cfg --load -1 --demo Videos\Cow
 - Use different version of ckpt saved models for different accuracy or to avoid overfitting
 - CKPT 750 was loss of around 9, CKPT 1500 was around 2, CKPT 500 could have been like 25
 - Very far from realtime on my Windows Intel i5 Processor, which makes sense (about 3.1 seconds to predict without anything else open)
+- Even slower if free cam is running (3.8 seconds)
