@@ -15,7 +15,8 @@ git submodule update --init --recursive
 
 
 ## Usage
-- Download this zip file and unzip in current folder: 
+- Download this zip file and unzip in current folder: https://drive.google.com/open?id=1aOa6Pz8x73K6poHSY4v02irGl-3Ag2Ud
+- Download the weights from https://github.com/thtrieu/darkflow and create a /bin folder to put it in. I downloaded yolov2.weights.
 - Change the following in cow_compliments.py: X_START, Y_START, X_STOP, Y_STOP
 - Run the following:
 ```
