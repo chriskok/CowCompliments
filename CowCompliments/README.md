@@ -14,7 +14,16 @@ git submodule update --init --recursive
 ```
 
 
-## Process
+## Usage
+- Download this zip file and unzip in current folder: 
+- Change the following in cow_compliments.py: X_START, Y_START, X_STOP, Y_STOP
+- Run the following:
+```
+python cow_compliments.py
+```
+
+
+## Process For Retraining
 1. Use Free Cam (https://www.freescreenrecording.com/) to capture a video of me walking amongst cows
 2. Use VLC to split the photos into pictures of each frame
 3. Use labelImg tool (after pip3 install labelImg) in the directory of the same name to label and create annotations for each image. The command is:
@@ -31,6 +40,7 @@ python darkflow\flow --model cfg/cow_custom_full.cfg --load -1 --demo Videos\Cow
 
 ## TODO
 - Look into preprocessing images and maybe hyperparameter tuning for yolo? 
+
 
 ## Notes
 - get images to label, inside google_images_download/google_images_download (python google_images_download.py --keywords "osrs cows" --limit 40 --format jpg)
